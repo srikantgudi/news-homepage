@@ -16,8 +16,12 @@
       font-family: 'Inter';
       src: url('./static/fonts/Inter-Regular.ttf');
     }
+    @font-face {
+      font-family: 'Inter Bold';
+      src: url('./static/fonts/Inter-Regular.ttf');
+    }
     * {
-      font-family: 'Inter';
+      font-family: 'Inter', 'Inter Bold', Helvetica;
     }
     nav {
       display: flex;
@@ -57,7 +61,8 @@
     }
     #headline {
       font-size: 3rem;
-      font-family: 'Inter-Bold';
+      font-family: 'Inter-Bold', Helvetica;
+      font-weight: 600;
     }
     .bottom-grid {
       display: grid;
@@ -100,7 +105,8 @@
       border-bottom: 2px solid whitesmoke;
     }
     .top-right-title {
-      font-family: 'Inter-Bold';
+      font-family: 'Inter-Bold', Helvetica;
+      font-weight: 600;
       font-size: 1rem;
       margin: 0.5rem auto;
     }
@@ -114,7 +120,8 @@
     }
     .bottom-grid-title {
       color: #101020;
-      font-family: 'Inter-Bold';
+      font-family: 'Inter-Bold', Helvetica;
+      font-weight: 600;
       margin: 1rem auto;
     }
     .bottom-grid-title:hover {
