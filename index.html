@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | News homepage</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    @font-face {
+      font-family: 'Inter';
+      src: url('./static/fonts/Inter-Regular.ttf');
+    }
+    * {
+      font-family: 'Inter';
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .top-menu {
+      display: flex;
+    }
+    .top-menu .icon {
+      display: none;
+    }
+    .top-menu .icon-close {
+      display: none;
+    }
+    .top-menu a {
+      text-decoration: none;
+      color: #666;
+      font-size: 12px;
+    }
+    body {
+      margin: 1vh 10vw;
+    }
+    header {
+      padding: 1rem 0;
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 1rem;
+    }
+    .main-sub-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    #headline {
+      font-size: 3rem;
+      font-family: 'Inter-Bold';
+    }
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .note {
+      font-size: 14px;
+      color: #999;
+    }
+    .top-right-note {
+      font-size: 14px;
+      color: #999;
+      margin-bottom: 1rem;
+    }
+    .read-more {
+      margin-top: 1rem;
+    }
+    .read-more-btn {
+      border: none;
+      background-color: orange;
+      padding: 0.5rem 1rem;
+    }
+    .top-right-box {
+      background-color: #010128;
+      color: whitesmoke;
+      padding: 1rem;
+    }
+    .top-right-new {
+      color: #db0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .top-right-card {
+      line-height: 2;
+      padding: 1rem auto;
+    }
+    .top-right-card:not(:last-child) {
+      border-bottom: 2px solid whitesmoke;
+    }
+    .top-right-title {
+      font-family: 'Inter-Bold';
+      font-size: 1rem;
+      margin: 0.5rem auto;
+    }
+    .bottom-grid-id {
+      color: #ccc;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .bottom-grid-title {
+      color: #101020;
+      font-family: 'Inter-Bold';
+      margin: 1rem auto;
+    }
+    .d-flex {
+      display: flex;
+    }
+    .bottom-grid-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      line-height: 1.5rem;
+    }
+    footer {
+      margin-top: 1rem;
+    }
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    #desktop-img {
+      display: block;
+    }
+    #mobile-img {
+      display: none;
+    }
+
+    @media screen and (max-width: 475px) {
+      .main-grid, .main-sub-grid, .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+      #desktop-img {
+        display: none;
+      }
+      #mobile-img {
+        display: block;
+      }
+      .bottom-grid-card {
+        flex-flow: column;
+        margin-top: 1rem;
+      }
+      .top-menu {
+        flex-flow: column;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: inherit;
+        width: 30%;
+        justify-content: flex-end;
+      }
+      .top-menu-links {
+        display: none;
+      }
+      .top-menu > .icon {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .top-menu:hover ~ html{
+        background-color: #ccc;
+      }
+      .top-menu:hover > .icon {
+        display: none;
+      }
+      .top-menu:hover > .icon-close {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .top-menu:hover > .top-menu-links {
+        display: flex;
+        flex-flow: column;
+        line-height: 3rem;
+        font-size: 1.5rem;
+        background-color: white;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="./static/images/logo.svg" alt="logo" />
+      <div class="top-menu">
+        <div class="icon">
+          <img src="./static/images/icon-menu.svg" alt="icon-menu">
+        </div>
+        <div class="icon-close">
+          <img src="./static/images/icon-menu-close.svg" alt="icon-menu">
+        </div>
+        <div class="top-menu-links">
+          <a href="#">Home</a>
+          <a href="#">New</a>
+          <a href="#">Popular</a>
+          <a href="#">Trending</a>
+          <a href="#">Categories</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="main-grid">
+      <div>
+        <div id="desktop-img">
+          <img src="./static/images/image-web-3-desktop.jpg" width="100%" alt="desktop">
+        </div>
+        <div id="mobile-img">
+          <img src="./static/images/image-web-3-mobile.jpg" width="100%" alt="desktop">
+        </div>
+        <div class="main-sub-grid">
+          <div id="headline">
+            The Bright Future of Web 3.0?
+          </div>
+          <div>
+            <div class="note">
+              We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
+            </div>
+            <div class="read-more">
+              <button class="read-more-btn">
+                Read more
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="top-right-box">
+          <div class="top-right-new">
+            New
+          </div>
+          <div class="top-right-card">
+            <div class="top-right-title">
+              Hydrogen VS Electric Cars
+            </div>
+            <div class="top-right-note">
+              Will hydrogen-fueled cars ever catch up to EVs?
+            </div>
+          </div>
+          <div class="top-right-card">
+            <div class="top-right-title">
+              The Downsides of Al Artistry
+            </div>
+            <div class="top-right-note">
+              What are the possible adverse effects of on-demand AI image generation?
+            </div>
+          </div>
+          <div class="top-right-card">
+            <div class="top-right-title">
+              Is VC Funding Drying Up?
+            </div>
+            <div class="top-right-note">
+              Private funding by VC firms is down 50% YOY. We take a look at what that means.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-grid">
+      <div class="bottom-grid-card">
+        <div>
+          <img src="./static/images/image-retro-pcs.jpg" height="120" align="content-start" />
+        </div>
+        <div>
+          <div class="bottom-grid-id">
+            01
+          </div>
+          <div class="bottom-grid-title">
+            Reviving Retro PCs
+          </div>
+          <div class="note">
+            What happens when old PCs are given modern upgrades?
+          </div>
+        </div>
+      </div>
+      <div class="bottom-grid-card">
+        <div>
+          <img src="./static/images/image-top-laptops.jpg" height="120" align="content-start" />
+        </div>
+        <div>
+          <div class="bottom-grid-id">
+            02
+          </div>
+          <div class="bottom-grid-title">
+            Top 10 Laptops of 2022
+          </div>
+          <div class="note">
+            Our best picks for various needs and budgets.
+          </div>
+        </div>
+      </div>
+      <div class="bottom-grid-card">
+        <div>
+          <img src="./static/images/image-gaming-growth.jpg" height="120" align="content-start" />
+        </div>
+        <div>
+          <div class="bottom-grid-id">
+            03
+          </div>
+          <div class="bottom-grid-title">
+            The Growth of Gaming
+          </div>
+          <div class="note">
+            How the pandemic has sparked fresh opportunities.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. | 
+    Coded by <a href="https://github.com/srikantgudi/news-homepage" target="_app">Srikant Gudi</a>.
+  </footer>
+</body>
+</html>
